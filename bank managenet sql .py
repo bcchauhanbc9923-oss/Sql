@@ -190,8 +190,6 @@ def on_select(event):
     for i, f in enumerate(fields):
         entries[f].delete(0, tk.END)
         entries[f].insert(0, values[i])
-
-# ---------------- BUTTONS ----------------
 btn_frame = tk.Frame(left_frame, bg="white")
 btn_frame.grid(row=5, column=0, columnspan=2, pady=10, sticky="ew")
 btn_frame.columnconfigure((0, 1, 2, 3), weight=1)
@@ -243,3 +241,4 @@ tree.bind("<<TreeviewSelect>>", on_select)
 load_data()
 
 root.mainloop()
+
