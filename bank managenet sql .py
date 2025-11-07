@@ -16,7 +16,7 @@ def connect_db():
         return None
 
 root = tk.Tk()
-root.title("🏦 Bank Management System")
+root.title(" Bank Management System")
 root.geometry("1100x620")
 root.config(bg="#f5f5f5")
 root.rowconfigure(1, weight=1)
@@ -241,4 +241,5 @@ tree.bind("<<TreeviewSelect>>", on_select)
 load_data()
 
 root.mainloop()
+
 
