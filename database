@@ -7,3 +7,59 @@ CREATE TABLE accounts (
     acc_type VARCHAR(50),
     balance DOUBLE
 );
+-- Insert Initial Records
+INSERT INTO accounts VALUES
+('1001', 'Rahul Mehta', 'Saving', 5000),
+('1002', 'Priya Sharma', 'Saving', 7500),
+('1003', 'Aman Gupta', 'Saving', 1200),
+('1004', 'Neha Verma', 'Saving', 9500),
+('1005', 'Karan Patel', 'Saving', 3000),
+('1006', 'Ravi Kumar', 'Saving', 8000),
+('1007', 'Sonia Arora', 'Current', 6500),
+('1008', 'Ankit Sharma', 'Current', 4200),
+('1009', 'Deepa Nair', 'Saving', 9900),
+('1010', 'Vikas Singh', 'Current', 2700);
+
+-- Display All Records
+SELECT * FROM bankdb.accounts;
+
+-- Update Account Details
+UPDATE accounts
+SET name = 'Ravi Sharma', balance = 9500
+WHERE acc_no = '1006';
+
+-- Delete an Account
+DELETE FROM accounts
+WHERE acc_no = '1010';
+
+-- View Balance of a Specific Account
+SELECT balance FROM accounts
+WHERE acc_no = '1003';
+
+-- Deposit Money into an Account
+UPDATE accounts
+SET balance = balance + 2000
+WHERE acc_no = '1002';
+-- Withdraw Money from an Account
+UPDATE accounts
+SET balance = balance - 1500
+WHERE acc_no = '1001';
+
+-- Check All Account Balances
+SELECT acc_no, name, balance FROM accounts;
+
+-- Display Total Number of Accounts
+SELECT COUNT(*) AS Total_Accounts FROM accounts;
+
+-- Display Accounts with Balance Greater than 5000
+SELECT * FROM accounts WHERE balance > 5000;
+
+-- Find Average Account Balance
+SELECT AVG(balance) AS Average_Balance FROM accounts;
+
+-- Show Minimum and Maximum Balance
+SELECT MIN(balance) AS Minimum_Balance, MAX(balance) 
+AS Maximum_Balance FROM accounts;
+
+-- Search Account by Name
+SELECT * FROM accounts WHERE name LIKE '%Sharma%';
